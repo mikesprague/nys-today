@@ -1,18 +1,67 @@
-// @import "~bootswatch/dist/superhero/_variables"; // replace superhero with bootswatch theme of choice
-@import '~bootstrap/scss/bootstrap';
-// @import "~bootswatch/dist/superhero/_bootswatch"; // replace superhero with bootswatch theme of choice
-
-$color-body-bg: #121212;
+$color-body-bg: #00719c;
 $color-body-text: #efefef;
+$color-text-highlight: #ffe770;
+$system-fonts: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-date: 'Special Elite';
+$font-text: 'Oswald';
 
 * {
   -moz-osx-font-smoothing: grayscale !important;
   -webkit-font-smoothing: subpixel-antialiased !important;
+  margin: 0;
+  padding: 0;
   text-rendering: optimizeLegibility !important;
 }
 
+html,
 body {
   background-color: $color-body-bg;
   color: $color-body-text;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  font-family: $system-fonts;
+  height: 100%;
+}
+
+body {
+  padding: 2rem;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: center;
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h1 {
+  font-family: $font-text;
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: .8rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  word-spacing: 2rem;
+}
+
+h2 {
+  color: $color-text-highlight;
+  font-family: $font-date;
+  font-size: 8rem;
+}
+
+.invisible {
+  visibility: hidden;
 }
