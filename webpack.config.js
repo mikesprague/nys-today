@@ -104,16 +104,16 @@ const webpackPlugins = [
       },
     ],
   }),
-  // new CopyWebpackPlugin({
-  //   patterns: [
-  //     {
-  //       from: './src/fonts/*.woff2',
-  //       to: './fonts',
-  //       flatten: true,
-  //       force: true,
-  //     },
-  //   ],
-  // }),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: './src/fonts/*.woff2',
+        to: './fonts',
+        flatten: true,
+        force: true,
+      },
+    ],
+  }),
   new WorkboxPlugin.GenerateSW({
     cleanupOutdatedCaches: true,
     clientsClaim: true,
