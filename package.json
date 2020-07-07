@@ -27,6 +27,8 @@
   "homepage": "https://github.com/mikesprague/nys-today",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.5.0",
+    "bootswatch": "^4.5.0",
     "cross-env": "^7.0.2",
     "dayjs": "^1.8.29",
     "dotenv": "^8.2.0",
