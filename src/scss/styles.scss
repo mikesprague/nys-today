@@ -1,6 +1,12 @@
+// @import "~bootswatch/dist/superhero/_variables"; // replace superhero with bootswatch theme of choice
+$dark: #001f2b;
+$secondary: #00415a;
+$enable-responsive-font-sizes: true;
+@import '~bootstrap/scss/bootstrap';
+// @import "~bootswatch/dist/superhero/_bootswatch"; // replace superhero with bootswatch theme of choice
 @import './fonts';
 
-$color-body-bg: #00415a;
+$color-body-bg: #121212;
 $color-body-text: #efefef;
 $color-text-highlight: #ffe770;
 $system-fonts: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -23,40 +29,40 @@ body {
   height: 100%;
 }
 
-.container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+.page-wrapper {
   height: 100%;
-  justify-content: center;
 }
 
-.row {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.heading-wrapper {
+  margin-bottom: 8rem;
+
+  h1 {
+    display: inline-block;
+  }
+
+  .nys-image {
+    height: auto;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    max-width: 10rem;
+    width: 100%;
+  }
 }
 
-h1 {
-  font-family: $font-text;
-  font-size: 2rem;
-  font-weight: normal;
-  letter-spacing: .8rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  text-transform: uppercase;
-  word-spacing: 2rem;
-}
+.card-wrapper {
+  h2 {
+    font-family: $font-text;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: .8rem;
+    text-align: center;
+    text-transform: uppercase;
+    word-spacing: 2rem;
+  }
 
-h2 {
-  color: $color-text-highlight;
-  font-family: $font-date;
-  font-size: 8rem;
-  text-align: center;
-}
-
-.invisible {
-  visibility: hidden;
+  h3 {
+    font-size: 10rem;
+    font-weight: 700;
+    text-align: center;
+  }
 }

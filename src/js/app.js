@@ -7,11 +7,9 @@ const initApp = () => {
   const today = dayjs();
   const totalDays = today.diff(shutdownDate, 'days');
   const todaysDate = totalDays + shutdownDay;
-  const h1el = document.querySelector('h1');
-  const h2el = document.querySelector('h2');
+  const dateNumberEl = document.querySelector('.todays-date');
   const fullDateString = `March ${todaysDate}, 2020`;
-  h1el.classList.remove('invisible');
-  h2el.textContent = fullDateString;
+  dateNumberEl.textContent = todaysDate;
   window.document.title = `${fullDateString} | ${window.document.title}`;
 };
 

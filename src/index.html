@@ -7,10 +7,18 @@
     <title>Today's Date in New York State</title>
     <meta name="description" content="Today's Date in New York State">
     <meta name="author" content="Michael Sprague">
-    <meta name="theme-color" content="#00415a">
+    <meta name="theme-color" content="#121212">
     <meta name="apple-mobile-web-app-title" content="Today's Date in New York State">
     <meta name="application-name" content="Today's Date in New York State">
-    <link rel="preload" as="script" type="text/javascript" href="/js/vendors~main.bundle.js">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiZTaR.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/XLYgIZbkc4JPUL5CVArUVL0ntnAOSA.woff2" crossorigin>
+    <link rel="preload" as="script" type="text/javascript" href="https://www.googletagmanager.com/gtag/js?id=UA-461185-37">
+    <link rel="preload" as="script" type="text/javascript" href="https://www.google-analytics.com/analytics.js">
     <link rel="preload" as="script" type="text/javascript" href="/js/bundle.js">
     <link rel="preload" as="style" type="text/css" href="/css/styles.css">
     <link rel="manifest" href="/manifest.json">
@@ -20,15 +28,32 @@
     <link rel="mask-icon" class="favicon" href="/images/apple-icon.png">
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <h1 class="hide-me">Today's Date in New York State</h1>
+    <div class="container page-wrapper">
+      <div class="heading-wrapper d-flex justify-content-center align-items-end">
+        <h1 class="display-1">Today's Date</h1>
+        <img class="nys-image" alt="New York State" src="/images/new-york-state.png">
       </div>
-      <div class="row">
-        <h2></h2>
+      <div class="d-flex justify-content-center align-items-center card-wrapper flex-grow-1">
+        <div class="card border-light bg-secondary">
+          <div class="card-header border-light bg-dark text-light">
+            <h2>March 2020</h2>
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mt-0 mb-0 bg-secondary">
+              <h3 class="todays-date"></h3>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </div>
-    <script src="/js/vendors~main.bundle.js"></script>
     <script src="/js/bundle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-461185-37"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-461185-37');
+    </script>
   </body>
 </html>
