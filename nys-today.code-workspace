@@ -2,8 +2,12 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../netlify-starter"
 		}
 	],
 	"settings": {
+		"cflint.enabled": false
 	},
 }

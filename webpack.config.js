@@ -2,6 +2,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const path = require('path');
 const purgecss = require('@fullhuman/postcss-purgecss');
+const tailwindcss = require('tailwindcss');
 const webpack = require('webpack');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -12,33 +13,18 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const mode = process.env.NODE_ENV;
 
-const cssWhitelistClassArray = [
-  /card-wrapper/,
-  /heading-wrapper/,
-  /nys-image/,
-  /card/,
-  /border-light/,
-  /bg-secondary/,
-  /card-header/,
-  /bg-dark/,
-  /text-light/,
-  /card-body/,
-  /todays-date/,
-  /mt-0/,
-  /mb-0/,
-  /blockquote/,
-  /align-items-center/,
-  /align-items-end/,
-  /d-flex/,
-  /display-1/,
-  /flex-grow-1/,
-  /justify-content-center/,
-  /h1/,
-  /h2/,
-  /h3/,
-];
+const cssWhitelistClassArray = [];
 
 const webpackRules = [
+  {
+    test: /\.(ttf|eot|woff|woff2)$/,
+    use: {
+      loader: 'file-loader',
+      options: {
+        name: 'fonts/[name].[ext]',
+      },
+    },
+  },
   {
     test: /\.(sa|sc|c)ss$/,
     use: [
@@ -56,15 +42,23 @@ const webpackRules = [
           plugins() {
             return [
               autoprefixer(),
+              tailwindcss(),
               cssnano({
                 preset: 'default',
               }),
               purgecss({
                 content: [
                   './public/index.html',
-                  './src/js/**/*.js',
-                  './src/js/**/*.jsx',
+                  './src/**/*.js',
+                  './src/**/*.jsx',
                 ],
+                defaultExtractor: (content) => {
+                  // Capture as liberally as possible, including things like `h-(screen-1.5)`
+                  const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
+                  // Capture classes within other delimiters like .block(class="w-1/2") in Pug
+                  const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
+                  return broadMatches.concat(innerMatches);
+                },
                 fontFace: true,
                 whitelistPatterns: cssWhitelistClassArray,
                 whitelistPatternsChildren: cssWhitelistClassArray,

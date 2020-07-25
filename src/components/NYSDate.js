@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
 import React from 'react';
-import './App.scss';
+import './NYSDate.scss';
 
-export default function App() {
+export default function NYSDate() {
   const shutdownDay = 22;
   const shutdownDate = dayjs(`2020-03-${shutdownDay}`);
   const today = dayjs();
@@ -13,19 +13,17 @@ export default function App() {
 
   return (
     <div className="container page-wrapper">
-      <div className="heading-wrapper d-flex justify-content-center align-items-end">
-        <h1 className="display-1">Today&apos;s Date</h1>
+      <div className="heading-wrapper">
+        <h1 className="">Today&apos;s Date</h1>
         <img className="nys-image" alt="New York State" src="/images/new-york-state.png" />
       </div>
-      <div className="d-flex justify-content-center align-items-center card-wrapper flex-grow-1">
-        <div className="card border-light bg-secondary">
-          <div className="card-header border-light bg-dark text-light">
+      <div className="card-wrapper">
+        <div className="card">
+          <div className="card-header">
             <h2>March 2020</h2>
           </div>
           <div className="card-body">
-            <blockquote className="mt-0 mb-0 blockquote bg-secondary">
-              <h3 className="todays-date">{todaysDate}</h3>
-            </blockquote>
+            <h3>{todaysDate}</h3>
           </div>
         </div>
       </div>
