@@ -13,15 +13,6 @@ const mode = process.env.NODE_ENV;
 
 const webpackRules = [
   {
-    test: /\.(ttf|eot|woff|woff2)$/,
-    use: {
-      loader: 'file-loader',
-      options: {
-        name: 'fonts/[name].[ext]',
-      },
-    },
-  },
-  {
     test: /\.(sa|sc|c)ss$/,
     use: [
       MiniCssExtractPlugin.loader,
@@ -42,7 +33,7 @@ const webpackRules = [
                 preset: 'default',
               }),
               purgecss({
-                content: ['./src/*.html', './src/js/modules/*.js'],
+                content: ['./public/index.html', './src/js/**/*.js'],
                 fontFace: true,
                 // whitelistPatterns: [/your-class-name/],
                 // whitelistPatternsChildren: [/your-class-name/],
@@ -73,53 +64,12 @@ const webpackPlugins = [
     filename: './css/styles.css',
     chunkFilename: './css/[id].css',
   }),
-
   new CopyWebpackPlugin({
     patterns: [
       {
-        from: `./src/manifest.json`,
+        from: './public/**/*',
         to: './',
-        flatten: true,
-        force: true,
-      },
-    ],
-  }),
-  new CopyWebpackPlugin({
-    patterns: [
-      {
-        from: `./src/sw.js`,
-        to: './',
-        flatten: true,
-        force: true,
-      },
-    ],
-  }),
-  new CopyWebpackPlugin({
-    patterns: [
-      {
-        from: './src/images/**/*',
-        to: './images',
-        flatten: true,
-        force: true,
-      },
-    ],
-  }),
-  new CopyWebpackPlugin({
-    patterns: [
-      {
-        from: `./src/index.html`,
-        to: './index.html',
-        force: true,
-        flatten: true,
-      },
-    ],
-  }),
-  new CopyWebpackPlugin({
-    patterns: [
-      {
-        from: './src/fonts/*.woff2',
-        to: './fonts',
-        flatten: true,
+        flatten: false,
         force: true,
       },
     ],
@@ -145,13 +95,13 @@ if (mode === 'production') {
 
 module.exports = {
   entry: [
-    './src/js/app.js',
+    './src/index.js',
   ],
   devtool: 'source-map',
   output: {
     filename: './js/bundle.js',
     chunkFilename: './js/[name].bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'build'),
   },
   mode,
   module: {

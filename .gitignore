@@ -120,11 +120,11 @@ dist
 .vscode
 .vscode-insiders
 
-# Misc
-
-public
-
 # Local Netlify folders
 
 .netlify
 lambda
+
+# production folder
+
+dist
