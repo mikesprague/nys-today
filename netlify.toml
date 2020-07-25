@@ -1,12 +1,12 @@
 [build]
-  command = "npm run build:netlify"
-  publish="public"
+  command = "yarn build"
+  publish="build"
 
 [dev]
-  command = "npm run serve"
+  command = "yarn start"
   port = 3000
-  publish = "public"
+  publish = "build"
 
 [production]
-  command = "npm run build:netlify"
-  publish = "public"
+  command = "yarn uild"
+  publish = "build"

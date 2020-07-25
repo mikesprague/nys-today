@@ -25,3 +25,18 @@
   src: local('Special Elite Regular'), local('SpecialElite-Regular'), url(/fonts/XLYgIZbkc4JPUL5CVArUVL0ntnAOSA.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+$color-body-bg: #121212;
+$color-body-text: #efefef;
+$color-text-highlight: #ffe770;
+$system-fonts: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-date: 'Special Elite';
+$font-text: 'Oswald';
+
+* {
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility !important;
+}
