@@ -1,5 +1,6 @@
 import '../scss/styles.scss';
 import dayjs from 'dayjs';
+import { initServiceWorker } from './modules/helpers';
 
 const initApp = () => {
   const shutdownDay = 22;
@@ -15,6 +16,7 @@ const initApp = () => {
 
 document.onreadystatechange = () => {
   if (document.readyState === 'interactive') {
+    initServiceWorker();
     initApp();
   }
 };

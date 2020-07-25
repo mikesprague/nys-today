@@ -61,7 +61,7 @@ const webpackRules = [
   },
   {
     test: /\.(js)$/,
-    exclude: [/node_modules/, /lambda/],
+    exclude: [/node_modules/, /sw.js/, /service-worker.js/],
     use: [{
       loader: 'babel-loader',
     }],
@@ -78,6 +78,16 @@ const webpackPlugins = [
     patterns: [
       {
         from: `./src/manifest.json`,
+        to: './',
+        flatten: true,
+        force: true,
+      },
+    ],
+  }),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: `./src/sw.js`,
         to: './',
         flatten: true,
         force: true,
