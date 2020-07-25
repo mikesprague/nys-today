@@ -2,6 +2,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const path = require('path');
 const purgecss = require('@fullhuman/postcss-purgecss');
+const webpack = require('webpack');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -10,6 +11,32 @@ const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const mode = process.env.NODE_ENV;
+
+const cssWhitelistClassArray = [
+  /card-wrapper/,
+  /heading-wrapper/,
+  /nys-image/,
+  /card/,
+  /border-light/,
+  /bg-secondary/,
+  /card-header/,
+  /bg-dark/,
+  /text-light/,
+  /card-body/,
+  /todays-date/,
+  /mt-0/,
+  /mb-0/,
+  /blockquote/,
+  /align-items-center/,
+  /align-items-end/,
+  /d-flex/,
+  /display-1/,
+  /flex-grow-1/,
+  /justify-content-center/,
+  /h1/,
+  /h2/,
+  /h3/,
+];
 
 const webpackRules = [
   {
@@ -33,10 +60,14 @@ const webpackRules = [
                 preset: 'default',
               }),
               purgecss({
-                content: ['./public/index.html', './src/js/**/*.js'],
+                content: [
+                  './public/index.html',
+                  './src/js/**/*.js',
+                  './src/js/**/*.jsx',
+                ],
                 fontFace: true,
-                // whitelistPatterns: [/your-class-name/],
-                // whitelistPatternsChildren: [/your-class-name/],
+                whitelistPatterns: cssWhitelistClassArray,
+                whitelistPatternsChildren: cssWhitelistClassArray,
               }),
             ];
           },
@@ -51,7 +82,7 @@ const webpackRules = [
     ],
   },
   {
-    test: /\.(js)$/,
+    test: /\.(js|jsx)$/,
     exclude: [/node_modules/, /sw.js/, /service-worker.js/],
     use: [{
       loader: 'babel-loader',
@@ -67,9 +98,29 @@ const webpackPlugins = [
   new CopyWebpackPlugin({
     patterns: [
       {
-        from: './public/**/*',
+        from: './public/images/**/*',
+        to: './images',
+        flatten: true,
+        force: true,
+      },
+    ],
+  }),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: './public/fonts/*.woff2',
+        to: './fonts',
+        flatten: true,
+        force: true,
+      },
+    ],
+  }),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: './public/*.*',
         to: './',
-        flatten: false,
+        flatten: true,
         force: true,
       },
     ],
@@ -98,12 +149,24 @@ module.exports = {
     './src/index.js',
   ],
   devtool: 'source-map',
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
   output: {
     filename: './js/bundle.js',
     chunkFilename: './js/[name].bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
   mode,
+  devServer: {
+    contentBase: path.join(__dirname, 'public/'),
+    hotOnly: true,
+    open: true,
+    port: 3000,
+    publicPath: 'http://localhost:3000/',
+    stats: 'minimal',
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
     rules: webpackRules,
   },
