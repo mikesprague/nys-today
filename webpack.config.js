@@ -21,7 +21,7 @@ const webpackRules = [
     use: {
       loader: 'file-loader',
       options: {
-        name: './css/fonts/[name].[ext]',
+        name: './fonts/[name].[ext]',
       },
     },
   },
