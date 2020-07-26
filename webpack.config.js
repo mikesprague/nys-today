@@ -124,6 +124,7 @@ const webpackPlugins = [
     clientsClaim: true,
     skipWaiting: true,
   }),
+  new webpack.HotModuleReplacementPlugin(),
 ];
 
 if (mode === 'production') {
@@ -160,7 +161,6 @@ module.exports = {
     publicPath: 'http://localhost:3000/',
     stats: 'minimal',
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
     rules: webpackRules,
   },
