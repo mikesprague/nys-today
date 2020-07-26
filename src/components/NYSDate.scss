@@ -28,31 +28,40 @@
 $color-blue-dark: #001f2b;
 $color-blue-secondary: #00415a;
 
+body {
+  @apply p-8;
+}
+
 .page-wrapper {
   @apply mx-auto;
-  height: 100%;
+  @apply h-full;
 }
 
 .heading-wrapper {
   @apply flex;
   @apply items-end;
   @apply justify-center;
-  margin-bottom: 8rem;
+  @apply mb-32;
 
   h1 {
-    display: inline-block;
-    font-size: 6rem;
-    font-weight: 300;
     line-height: 1.2;
-    margin-bottom: .5rem;
+    @apply text-6xl;
+    @apply inline-block;
+    @apply font-light;
+    @apply mb-2;
+  }
+  @screen md {
+    h1 {
+      font-size: 6rem;
+    }
   }
 
   .nys-image {
-    height: auto;
-    margin-left: 2rem;
-    margin-top: 1rem;
     max-width: 10rem;
-    width: 100%;
+    @apply ml-8;
+    @apply mt-4;
+    @apply h-auto;
+    @apply w-full;
   }
 }
 
@@ -77,12 +86,12 @@ $color-blue-secondary: #00415a;
 
     h2 {
       font-family: 'Oswald';
-      font-size: 2rem;
-      font-weight: normal;
-      letter-spacing: .8rem;
-      text-align: center;
-      text-transform: uppercase;
+      letter-spacing: .6rem;
       word-spacing: 2rem;
+      @apply text-3xl;
+      @apply font-normal;
+      @apply text-center;
+      @apply uppercase;
     }
   }
 
@@ -91,8 +100,8 @@ $color-blue-secondary: #00415a;
 
     h3 {
       font-size: 10rem;
-      font-weight: 700;
-      text-align: center;
+      @apply font-bold;
+      @apply text-center;
     }
   }
 }
