@@ -21,7 +21,7 @@ const webpackRules = [
     use: {
       loader: 'file-loader',
       options: {
-        name: 'fonts/[name].[ext]',
+        name: './css/fonts/[name].[ext]',
       },
     },
   },
@@ -103,7 +103,7 @@ const webpackPlugins = [
     patterns: [
       {
         from: './public/fonts/*.woff2',
-        to: './fonts',
+        to: './css/fonts',
         flatten: true,
         force: true,
       },
