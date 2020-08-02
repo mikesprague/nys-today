@@ -6,6 +6,8 @@ export default function NYSDate() {
   const shutdownDay = 22;
   const shutdownDate = dayjs(`2020-03-${shutdownDay}`);
   const today = dayjs();
+  const dayOfWeek = dayjs(today).format('dddd');
+  console.log(dayOfWeek);
   const totalDays = today.diff(shutdownDate, 'days');
   const todaysDate = totalDays + shutdownDay;
   const fullDateString = `March ${todaysDate}, 2020`;
@@ -24,6 +26,7 @@ export default function NYSDate() {
           </div>
           <div className="card-body">
             <h3>{todaysDate}</h3>
+            <h4>{dayOfWeek}</h4>
           </div>
         </div>
       </div>

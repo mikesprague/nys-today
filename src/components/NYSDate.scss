@@ -87,8 +87,8 @@ body {
     h2 {
       font-family: 'Oswald';
       letter-spacing: .6rem;
-      word-spacing: 2rem;
-      @apply text-3xl;
+      word-spacing: 1rem;
+      @apply text-4xl;
       @apply font-normal;
       @apply text-center;
       @apply uppercase;
@@ -102,6 +102,14 @@ body {
       font-size: 10rem;
       @apply font-bold;
       @apply text-center;
+    }
+
+    h4 {
+      font-family: 'Oswald';
+      @apply text-center;
+      @apply uppercase;
+      @apply text-3xl;
+      @apply tracking-widest;
     }
   }
 }
