@@ -1983,10 +1983,10 @@
     strip-ansi "^5.0.0"
     through "^2.3.6"
 
-"@snyk/java-call-graph-builder@1.12.3":
-  version "1.12.3"
-  resolved "https://registry.yarnpkg.com/@snyk/java-call-graph-builder/-/java-call-graph-builder-1.12.3.tgz#f0be2c2acb1df900bbd52c0a4d2e6efbbdb0dbac"
-  integrity sha512-eN32RcCq5J0Veo5NIbDUSb2KRNiVsZMt1w94bFYKxFt6F1tIoiv1CraXdTHSlgQosZ7tw93e8qdOKmQXOtK88Q==
+"@snyk/java-call-graph-builder@1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@snyk/java-call-graph-builder/-/java-call-graph-builder-1.13.1.tgz#641d0f929baa95cd30f8e16f938b4d21499a1e9b"
+  integrity sha512-oOCSIyOMplV73a1agcXKXlFYQftK5esUUaFRTf90GOxQwKy8R9tZtKdP+CdutlgvjRP286DQ+7GlvKYsGGZbWg==
   dependencies:
     "@snyk/graphlib" "2.1.9-patch"
     ci-info "^2.0.0"
@@ -5203,10 +5203,10 @@ date-time@^2.1.0:
   dependencies:
     time-zone "^1.0.0"
 
-dayjs@^1.8.31:
-  version "1.8.31"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.31.tgz#0cd1114c2539dd5ad9428be0c38df6d4bb40b9d3"
-  integrity sha512-mPh1mslned+5PuIuiUfbw4CikHk6AEAf2Baxih+wP5fssv+wmlVhvgZ7mq+BhLt7Sr/Hc8leWDiwe6YnrpNt3g==
+dayjs@^1.8.33:
+  version "1.8.33"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.33.tgz#18bc4a2b6c1c6f4d67b4c4f2536c0b97e5b766f7"
+  integrity sha512-881TDLZCdpJFKbraWRHcUG8zfMLLX400ENf9rFZDuWc5zYMss6xifo2PhlDX0ftOmR2NRmaIY47bAa4gKQfXqw==
 
 debug@2, debug@2.6.9, debug@^2.1.1, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
@@ -14031,13 +14031,13 @@ snyk-module@^2.0.2:
     debug "^3.1.0"
     hosted-git-info "^2.7.1"
 
-snyk-mvn-plugin@2.18.2:
-  version "2.18.2"
-  resolved "https://registry.yarnpkg.com/snyk-mvn-plugin/-/snyk-mvn-plugin-2.18.2.tgz#d35e825ccfc2807c26bf6776116d46de03d3f115"
-  integrity sha512-A36YmfpeEXGsKoChm644DysKG40d5y5MZnldkpsbrLz37R3JMxkt4igMACZ9QJZAkiWjVs28hOKyyT1vuMPlHg==
+snyk-mvn-plugin@2.19.1:
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/snyk-mvn-plugin/-/snyk-mvn-plugin-2.19.1.tgz#00b68a459a4da9e39b0d8c416ae05496b3b03ee3"
+  integrity sha512-VXYJSdhUmOQAyxdsv5frAKbi3UOcHPabWEQxQ9wxhVBEEmx2lP5ajv1a+ntxwWwL7u3jdc+rnCIKHpLlQJ5nyw==
   dependencies:
     "@snyk/cli-interface" "2.8.1"
-    "@snyk/java-call-graph-builder" "1.12.3"
+    "@snyk/java-call-graph-builder" "1.13.1"
     debug "^4.1.1"
     needle "^2.5.0"
     tmp "^0.1.0"
@@ -14198,10 +14198,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.369.2:
-  version "1.369.2"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.369.2.tgz#23065ff8bdf92e020c631685906b4cf0c3ca1c63"
-  integrity sha512-LgY0lHycWag6wVNH/B1FlM4CWyE+O55j7bMa5CtVp/W/id4DKglpYxKjN56Vb9f7krOFtxbQiksE1W70rJOUoQ==
+snyk@^1.373.1:
+  version "1.373.1"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.373.1.tgz#1fc2c04e291e6a1915ad08be4c2ec23f0e11fec5"
+  integrity sha512-R8f0IpBPlK5fMytP9X1Nrk//u2NKHQ+kv/PFi0SaCW80ksFP3zrC8oKXYBkvfYTm+56TVw8cZm888DwvEOL5zg==
   dependencies:
     "@snyk/cli-interface" "2.8.1"
     "@snyk/dep-graph" "1.18.3"
@@ -14230,7 +14230,7 @@ snyk@^1.369.2:
     snyk-go-plugin "1.16.0"
     snyk-gradle-plugin "3.5.1"
     snyk-module "3.1.0"
-    snyk-mvn-plugin "2.18.2"
+    snyk-mvn-plugin "2.19.1"
     snyk-nodejs-lockfile-parser "1.26.3"
     snyk-nuget-plugin "1.18.1"
     snyk-php-plugin "1.9.0"
@@ -15006,7 +15006,7 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
-tailwindcss@^1.6.1:
+tailwindcss@^1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.6.2.tgz#352da9e1b0d9154c95ce12483daa1c2fa1f1eea8"
   integrity sha512-Cpa0kElG8Sg5sJSvTYi2frmIQZq0w37RLNNrYyy/W6HIWKspqSdTfb9tIN6X1gm4KV5a+TE/n7EKmn5Q9C7EUQ==
