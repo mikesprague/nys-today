@@ -3,6 +3,13 @@ module.exports = {
   theme: {
     extend: {},
   },
+  experimental: {
+    applyComplexClasses: true,
+    uniformColorPalette: true,
+    extendedSpacingScale: true,
+    extendedFontSizeScale: true,
+    defaultLineHeights: true,
+  },
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
