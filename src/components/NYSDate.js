@@ -7,7 +7,7 @@ export default function NYSDate() {
   const shutdownDate = dayjs(`2020-03-${shutdownDay}`);
   const today = dayjs();
   const dayOfWeek = dayjs(today).format('dddd');
-  console.log(dayOfWeek);
+  // console.log(dayOfWeek);
   const totalDays = today.diff(shutdownDate, 'days');
   const todaysDate = totalDays + shutdownDay;
   const fullDateString = `March ${todaysDate}, 2020`;
