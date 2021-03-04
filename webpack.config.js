@@ -60,25 +60,25 @@ const webpackPlugins = [
     patterns: [
       {
         from: './public/images/**/*',
-        to: './images/[name].[ext]',
+        to: './images/[name][ext]',
         force: true,
       },
     ],
   }),
-  new CopyWebpackPlugin({
-    patterns: [
-      {
-        from: './public/fonts/*.woff2',
-        to: './css/fonts/[name].[ext]',
-        force: true,
-      },
-    ],
-  }),
+//  new CopyWebpackPlugin({
+//    patterns: [
+//      {
+//        from: './public/fonts/*.woff2',
+//        to: './css/fonts/[name][ext]',
+//        force: true,
+//      },
+//    ],
+//  }),
   new CopyWebpackPlugin({
     patterns: [
       {
         from: './public/manifest.json',
-        to: './[name].[ext]',
+        to: './[name][ext]',
         force: true,
       },
     ],
@@ -87,7 +87,7 @@ const webpackPlugins = [
     patterns: [
       {
         from: './public/robots.txt',
-        to: './[name].[ext]',
+        to: './[name][ext]',
         force: true,
       },
     ],
